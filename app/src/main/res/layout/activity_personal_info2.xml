@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PersonalInfo2">
+
+    <Button
+        android:id="@+id/backbutton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/back"
+        android:background="@color/material_on_background_disabled"
+        android:layout_marginStart="5dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp">
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/height"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/height_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:autofillHints="no"
+            android:ems="5"
+            android:layout_marginLeft="50dp"
+            android:hint="@string/_170"
+            android:inputType="number"
+            android:layout_marginStart="56dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+       >
+
+
+        <TextView
+            android:id="@+id/current_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_weight"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="100dp"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/current_weight_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/_60"
+            android:ems="5"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:autofillHints="no" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+
+        <TextView
+            android:id="@+id/target_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target_weight"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="100dp"
+            android:textStyle="bold"
+             />
+
+        <EditText
+            android:id="@+id/target_weight_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/_55"
+            android:ems="5"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:autofillHints="no" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/cont3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/cont"
+        android:layout_marginStart="250dp" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".FoodPage">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/backbutton6"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/material_on_background_disabled"
+                android:text="@string/back" />
+
+            <ImageView
+                android:id="@+id/weight_photo_pic"
+                android:layout_width="199dp"
+                android:layout_height="162dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@mipmap/food_foreground"
+                android:layout_marginStart="25dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:text="@string/total" />
+            <TextView
+                android:id="@+id/total_calorie"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:text="@string/_0_kcal_"
+                android:layout_marginStart="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_added_food"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/background_dark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/add_new_food_image_btn"
+                android:layout_gravity="center"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="deneme"
+                android:background="@color/material_on_background_disabled"
+                app:srcCompat="@mipmap/addpic_foreground" />
+            <TextView
+                android:id="@+id/add_new_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_new_food"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginStart="10dp" />
+            <Button
+                android:id="@+id/add_new_food_btn"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:background="@color/material_on_background_disabled"
+                android:text="@string/go"
+                android:layout_marginStart="130dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark"/>
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/background_dark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/food_statistics_image_btn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@color/material_on_background_disabled"
+                app:srcCompat="@mipmap/statistics_foreground" />
+            <TextView
+                android:id="@+id/food_statistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/statistics"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginStart="10dp" />
+            <Button
+                android:id="@+id/food_statistics_btn"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:background="@color/material_on_background_disabled"
+                android:text="@string/go"
+                android:layout_marginStart="170dp" />
+
+        </LinearLayout>
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_dark"/>
+
+    </LinearLayout>
+</ScrollView>
