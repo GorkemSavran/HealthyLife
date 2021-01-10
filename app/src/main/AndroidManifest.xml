@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.healthylife">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,11 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AddBasketballPage"></activity>
-        <activity android:name=".SearchSport" />
         <activity android:name=".SportStatistics" />
         <activity android:name=".FoodStatistics" />
-        <activity android:name=".AddEggPage" />
-        <activity android:name=".SearchFood" />
+        <activity android:name=".activities.AddFoodPage" />
+        <activity android:name=".activities.SearchFood" />
         <activity android:name=".RegardingPage" />
         <activity android:name=".WaterPage" />
         <activity android:name=".SettingsPage" />

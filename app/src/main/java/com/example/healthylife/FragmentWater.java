@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class FragmentWater extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,12 +56,23 @@ public class FragmentWater extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_water, container, false);
+        final EditText how_much_water = (EditText) view.findViewById(R.id.how_much_water);
+        Button add_water_btn = (Button) view.findViewById(R.id.add_water_btn);
+        Button extract_water_btn = (Button) view.findViewById(R.id.extract_water_btn);
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_water, container, false);
+        return view;
+
     }
+
+
+
 }

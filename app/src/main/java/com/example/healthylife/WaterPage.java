@@ -9,22 +9,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.healthylife.models.IObserver;
 import com.jjoe64.graphview.GraphView;
 
-public class WaterPage extends AppCompatActivity implements View.OnClickListener  {
+public class WaterPage extends AppCompatActivity implements View.OnClickListener, IObserver {
     Button backbutton10, add_water_btn, extract_water_btn;
     Context context = this;
     GraphView graph_water;
     ImageButton add_extract_water;
     FragmentManager manager5;
+
     TextView today_total_ml;
-    EditText how_much_water;
-    int today_total_ml_int=0;
+
     Integer control = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         init();
         backbutton10.setOnClickListener(this);
         manager5 = getSupportFragmentManager();
+
     }
     public void init(){
         backbutton10 = findViewById(R.id.backbutton10);
@@ -41,7 +44,7 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         add_water_btn = findViewById(R.id.add_water_btn);
         extract_water_btn = findViewById(R.id.extract_water_btn);
         today_total_ml = findViewById(R.id.today_total_ml);
-        how_much_water = findViewById(R.id.how_much_water);
+
     }
     public void waterAddExtr(View v){
         if (control == 0) {
@@ -61,16 +64,6 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         }
 
     }
-    //su mikatrını değiştirme
-    public void addWater(View v){
-        int how_much_water_int =  Integer.parseInt(how_much_water.getText().toString());
-        today_total_ml_int = today_total_ml_int + how_much_water_int;
-        today_total_ml.setText(String.valueOf(today_total_ml_int) + " ml");
-
-    }
-    public void extractWater(View v){
-
-    }
 
     @Override
     public void onClick(View v) {
@@ -78,5 +71,10 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
             Intent intent = new Intent(context, MainScreen.class);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void update() {
+        today_total_ml.setText(String.valueOf(10) + " ml");
     }
 }

@@ -8,10 +8,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SearchFood">
+    tools:context=".activities.SearchFood">
 
     <Button
-        android:id="@+id/backbutton7"
+        android:id="@+id/backbutton"
         android:layout_width="77dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -24,17 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
         <EditText
-            android:id="@+id/searchView_food"
+            android:id="@+id/search_food_textView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:visibility="visible" />
         <Button
-            android:id="@+id/search_food"
+            android:id="@+id/search_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="click_Search"
             android:text="Search">
 
 

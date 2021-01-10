@@ -44,10 +44,10 @@ public class SportPage extends AppCompatActivity implements View.OnClickListener
                 Intent intent = new Intent(context, MainScreen.class);
                 startActivity(intent);
                 break;
-            case R.id.add_new_sport_btn:
+/*            case R.id.add_new_sport_btn:
                 Intent intent1 = new Intent(context, SearchSport.class);
                 startActivity(intent1);
-                break;
+                break;*/
             case R.id.sport_statistics_btn:
                 Intent intent2 = new Intent(context, SportStatistics.class);
                 startActivity(intent2);

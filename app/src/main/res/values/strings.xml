@@ -66,9 +66,8 @@
     <string name="today_total">Today Total</string>
     <string name="add_new_activity">Add new activity</string>
     <string-array name="material_select">
-        <item>piece </item>
-        <item>tablespoon(ts)</item>
-        <item>soup ladle</item>
+        <item>piece</item>
+        <item>gram</item>
         <item>water glass</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->

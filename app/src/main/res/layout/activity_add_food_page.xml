@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddEggPage">
+    tools:context=".activities.AddFoodPage">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/backbutton8"
+            android:id="@+id/backButton"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -20,7 +20,7 @@
             android:text="@string/back" />
 
         <ImageView
-            android:id="@+id/egg_photo_pic"
+            android:id="@+id/food_photo"
             android:layout_width="254dp"
             android:layout_height="313dp"
             android:layout_gravity="center"
@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/egg_boiled_text"
+        android:id="@+id/foodName_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -75,7 +75,6 @@
         android:layout_height="wrap_content"
         android:text="@string/add"
         android:ems="12"
-        android:onClick="addEgg"
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
     </Button>
