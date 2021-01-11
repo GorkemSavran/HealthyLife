@@ -3,7 +3,6 @@ package com.example.healthylife.activities;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,16 +15,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.healthylife.R;
-import com.example.healthylife.controllers.TodayDailyFoodController;
-import com.example.healthylife.fragments.FoodFragment;
+import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.models.Food;
 import com.example.healthylife.models.QuantityMeasure;
 import com.example.healthylife.tasks.DownloadImageTask;
-
-import java.util.ArrayList;
 
 public class AddFoodPage extends AppCompatActivity  implements View.OnClickListener, AdapterView.OnItemSelectedListener, TextWatcher{
     Context context = this;
@@ -41,7 +36,7 @@ public class AddFoodPage extends AppCompatActivity  implements View.OnClickListe
     int caloriePer100Gram;
     Button addFoodButton;
     FragmentManager fragmentManager;
-    TodayDailyFoodController todayDailyFoodController;
+    TodayDailyFoodHolder todayDailyFoodHolder;
 
 
     @Override
@@ -68,6 +63,8 @@ public class AddFoodPage extends AppCompatActivity  implements View.OnClickListe
         foodNameText.setText(foodName);
         new DownloadImageTask(foodPhoto)
                 .execute(foodImageUrl);
+
+        addFoodButton.setOnClickListener(this);
         materialSpinner.setOnItemSelectedListener(this);
         numberOfFood.addTextChangedListener(this);
         backButton.setOnClickListener(this);
@@ -133,17 +130,9 @@ public class AddFoodPage extends AppCompatActivity  implements View.OnClickListe
                 double totalCalorie = calculateTotalCalories(Integer.parseInt(numberOfFood.getText().toString()), item, foodName);
                 Food newFood = new Food(foodName,"0", Integer.parseInt(numberOfFood.getText().toString()), QuantityMeasure.PIECE, (int)totalCalorie);
                 // yeni oluşturucağımız food nesnesi kullanıcının girdiği bilgilerden
-                todayDailyFoodController = TodayDailyFoodController.getInstance();
-                todayDailyFoodController.addFood(newFood);
-
-               /* double totalCalorie = calculateTotalCalories(Integer.parseInt(numberOfFood.getText().toString()), item, foodName);
-                Intent intent = new Intent();
-                intent.putExtra("foodNameText",foodNameText.getText().toString());
-                intent.putExtra("numberOfFood",Integer.parseInt(numberOfFood.getText().toString()));
-                intent.putExtra("totalCalorie",(int)totalCalorie);
-                startActivity(intent);
-                //quantity measures silinebilir bence
-                break;*/
+                todayDailyFoodHolder = TodayDailyFoodHolder.getInstance();
+                todayDailyFoodHolder.addFood(newFood);
+                finish();
         }
 
     }

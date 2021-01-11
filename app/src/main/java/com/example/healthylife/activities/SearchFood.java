@@ -58,8 +58,7 @@ public class SearchFood extends AppCompatActivity implements View.OnClickListene
                 transaction.commit();
                 break;
             case R.id.backbutton:
-                Intent intent = new Intent(context, AddFoodPage.class);
-                startActivity(intent);
+                finish();
                 break;
         }
     }

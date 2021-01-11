@@ -12,10 +12,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.healthylife.models.IObserver;
 import com.jjoe64.graphview.GraphView;
 
-public class WaterPage extends AppCompatActivity implements View.OnClickListener, IObserver {
+public class WaterPage extends AppCompatActivity implements View.OnClickListener {
     Button backbutton10, add_water_btn, extract_water_btn;
     Context context = this;
     GraphView graph_water;
@@ -72,8 +71,4 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    @Override
-    public void update() {
-        today_total_ml.setText(String.valueOf(10) + " ml");
-    }
 }

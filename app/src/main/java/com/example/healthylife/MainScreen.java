@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.healthylife.holders.TodayDailyFoodHolder;
+
 public class MainScreen extends AppCompatActivity implements View.OnClickListener {
     Button weight_page_btn, food_page_btn,water_page_btn,sport_page_btn,setting_page_btn;
     ImageView weight_pic, food_pic,water_pic,sport_pic,settings_pic;
@@ -55,6 +57,14 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
         taken_water = findViewById(R.id.taken_water);
         burnt_calorie = findViewById(R.id.burnt_calorie);
         settings = findViewById(R.id.settings);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int totalCalories = TodayDailyFoodHolder.getInstance().getTodayTotalCalories();
+        consumed_calorie.setText(totalCalories + " kcal");
+        taken_calorie.setText(totalCalories + " kcal taken");
     }
 
     @Override

@@ -7,6 +7,22 @@ public class DailyFood {
     private int todayCalories;
     private ArrayList<Food> todayFoods;
 
+    public int getTodayCalories() {
+        return todayCalories;
+    }
+
+    public void setTodayCalories(int todayCalories) {
+        this.todayCalories = todayCalories;
+    }
+
+    public ArrayList<Food> getTodayFoods() {
+        return todayFoods;
+    }
+
+    public void setTodayFoods(ArrayList<Food> todayFoods) {
+        this.todayFoods = todayFoods;
+    }
+
     public DailyFood ()
     {
         this.todayCalories = 0;
@@ -21,10 +37,12 @@ public class DailyFood {
 
     public void addFood(Food food) {
         this.todayFoods.add(food);
+        this.todayCalories = this.todayCalories + food.getTotalCalories();
     }
 
     public void removeFood(Food food) {
         this.todayFoods.remove(food);
+        this.todayCalories = this.todayCalories - food.getTotalCalories();
     }
 
 }

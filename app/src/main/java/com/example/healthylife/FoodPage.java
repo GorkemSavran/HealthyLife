@@ -11,60 +11,49 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.healthylife.activities.SearchFood;
-import com.example.healthylife.controllers.TodayDailyFoodController;
+import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.fragments.FoodFragment;
 import com.example.healthylife.models.Food;
-import com.example.healthylife.models.QuantityMeasure;
 
 import java.util.ArrayList;
 
 public class FoodPage extends AppCompatActivity implements View.OnClickListener {
     Context context = this;
-    Button  backButton,add_new_food_btn, food_statistics_btn;
-    ImageButton add_new_food_image_btn, food_statistics_image_btn;
-    LinearLayout fragment_added_food;
+    Button  backButton, addNewFoodBtn, foodStatisticsBtn;
+    ImageButton addNewFoodImageBtn, foodStatisticsImageBtn;
+    LinearLayout fragmentAddedFood;
     FragmentManager fragmentManager;
-    String foodNameText;
-    Integer totalCalorie, numberOfFood;
-    TodayDailyFoodController DailyFood;
+    TextView foodTotalCalories;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_page);
-        init();
         fragmentManager = getSupportFragmentManager();
-
+        init();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listFoods();
+    }
+
     public void init() {
         backButton = findViewById(R.id.backbutton6);
-        add_new_food_btn = findViewById(R.id.add_new_food_btn);
-        food_statistics_btn = findViewById(R.id.food_statistics_btn);
-        add_new_food_image_btn = findViewById(R.id.add_new_food_image_btn);
-        food_statistics_image_btn = findViewById(R.id.food_statistics_image_btn);
-        fragment_added_food = findViewById(R.id.fragment_added_food);
+        addNewFoodBtn = findViewById(R.id.add_new_food_btn);
+        foodStatisticsBtn = findViewById(R.id.food_statistics_btn);
+        addNewFoodImageBtn = findViewById(R.id.add_new_food_image_btn);
+        foodStatisticsImageBtn = findViewById(R.id.food_statistics_image_btn);
+        fragmentAddedFood = findViewById(R.id.fragment_added_food);
+        foodTotalCalories = findViewById(R.id.total_calorie);
+
         backButton.setOnClickListener(this);
-        add_new_food_btn.setOnClickListener(this);
-        food_statistics_btn.setOnClickListener(this);
-/*      instance al
-        Bundle extra= getIntent().getExtras();
-        assert extra != null;
-        foodNameText = extra.getString("foodNameText");
-        numberOfFood = extra.getInt("numberOfFood");
-        totalCalorie = extra.getInt("totalCalorie",0);
-
-        ArrayList<Food> addedFoods = new ArrayList<Food>();
-        addedFoods.add(new Food(foodNameText,"0" , numberOfFood, QuantityMeasure.PIECE,totalCalorie));
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        FoodFragment addedFragment = (FoodFragment) fragmentManager.findFragmentByTag("Taken Food List");
-        if(addedFragment != null){
-            transaction.remove(addedFragment);
-        }
-        addedFragment = new FoodFragment(addedFoods, false);
-        transaction.add(R.id.fragment_added_food, addedFragment, "Taken Food List");
-        transaction.commit(); */
-
+        addNewFoodBtn.setOnClickListener(this);
+        foodStatisticsBtn.setOnClickListener(this);
     }
 
 
@@ -87,5 +76,20 @@ public class FoodPage extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
+
+    private void listFoods() {
+        ArrayList<Food> foods = TodayDailyFoodHolder.getInstance().getFoods();
+        FoodFragment foodFragment = (FoodFragment) fragmentManager.findFragmentByTag("Added Food");
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        if(foodFragment != null) {
+            transaction.remove(foodFragment);
+        }
+        if(!foods.isEmpty()) {
+            foodFragment = new FoodFragment(foods, false);
+            transaction.add(R.id.fragment_added_food, foodFragment, "Added Food");
+            foodTotalCalories.setText(TodayDailyFoodHolder.getInstance().getTodayTotalCalories() + " KCAL");
+        }
+        transaction.commit();
+    }
 
 }

@@ -9,17 +9,16 @@ public class Food {
     private String foodImageUrl;
     private int quantity;
     private QuantityMeasure quantityMeasure;
-    private int calorie;
-    //private int caloriePer100Gram;
+    private int totalCalories;
 
 
 
-    public Food(String foodName, String foodImageUrl, int quantity, QuantityMeasure quantityMeasure, int calorie) {
+    public Food(String foodName, String foodImageUrl, int quantity, QuantityMeasure quantityMeasure, int totalCalories) {
         this.foodName = foodName;
         this.foodImageUrl = foodImageUrl;
         this.quantity = quantity;
         this.quantityMeasure = quantityMeasure;
-        this.calorie = calorie;
+        this.totalCalories = totalCalories;
 
     }
 
@@ -48,14 +47,6 @@ public class Food {
         this.quantity = quantity;
     }
 
-    public int getCalorie() {
-        return calorie;
-    }
-
-    public void setCalorie(int calorie) {
-        this.calorie = calorie;
-    }
-
     public QuantityMeasure getQuantityMeasure() {
         return quantityMeasure;
     }
@@ -64,14 +55,12 @@ public class Food {
         this.quantityMeasure = quantityMeasure;
     }
 
-   /* public int getCaloriePer100Gram() {
-        return caloriePer100Gram;
+
+    public int getTotalCalories() {
+        return totalCalories;
     }
 
-    public void setCaloriePer100Gram(int caloriePer100Gram) {
-        this.caloriePer100Gram = caloriePer100Gram;
+    public void setTotalCalories(int totalCalories) {
+        this.totalCalories = totalCalories;
     }
-*/
-
-
 }
