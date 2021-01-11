@@ -37,8 +37,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.backbutton:
-                Intent intent = new Intent (context, MainActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             //case R.id.reset:
                 //EditText resetMail = new EditText(v.getContext());

@@ -37,8 +37,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.backbutton2:
-                Intent intent1 = new Intent (context, MainActivity.class);
-                startActivity(intent1);
+                finish();
                 break;
             case R.id.sign_in:
                 if (username2.getText().toString().equals("gorkem")  && email2.getText().toString().equals("gorkem789@") && password2.getText().toString().equals("2") &&

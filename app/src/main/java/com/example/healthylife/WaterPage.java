@@ -68,8 +68,7 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.backbutton10) {
-            Intent intent = new Intent(context, MainScreen.class);
-            startActivity(intent);
+            finish();
         }
     }
 

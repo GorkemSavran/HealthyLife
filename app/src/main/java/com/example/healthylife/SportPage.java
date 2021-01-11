@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.healthylife.activities.SearchSport;
+
 public class SportPage extends AppCompatActivity implements View.OnClickListener {
     Button backbutton12, add_new_sport_btn, sport_statistics_btn;
     TextView total_burn_calorie, sport_statistics;
@@ -41,13 +43,12 @@ public class SportPage extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backbutton12:
-                Intent intent = new Intent(context, MainScreen.class);
-                startActivity(intent);
+                finish();
                 break;
-/*            case R.id.add_new_sport_btn:
+            case R.id.add_new_sport_btn:
                 Intent intent1 = new Intent(context, SearchSport.class);
                 startActivity(intent1);
-                break;*/
+                break;
             case R.id.sport_statistics_btn:
                 Intent intent2 = new Intent(context, SportStatistics.class);
                 startActivity(intent2);

@@ -97,7 +97,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         public void onClick(View v) {
             Intent addFoodPage = new Intent(foodFragment.getContext(), AddFoodPage.class);
             addFoodPage.putExtra("foodName", this.food.getFoodName());
-            addFoodPage.putExtra("caloriePer100Gram", this.food.getCaloriePer100Gram());
+            //addFoodPage.putExtra("caloriePer100Gram", this.food.getCaloriePer100Gram());
             addFoodPage.putExtra("foodImageUrl", this.food.getFoodImageUrl());
             startActivity(foodFragment.getContext(), addFoodPage,null);
         }

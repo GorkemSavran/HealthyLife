@@ -17,7 +17,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 public class WeightPage extends AppCompatActivity implements View.OnClickListener {
     GraphView graph_weight;
     EditText current_weight_update;
-    Button backbutton5;
+    Button backButton;
     ImageView update_weight_pic;
     Context context = this;
     @Override
@@ -33,20 +33,19 @@ public class WeightPage extends AppCompatActivity implements View.OnClickListene
 
         });
         graph_weight.addSeries(series);
-        backbutton5.setOnClickListener(this);
+        backButton.setOnClickListener(this);
     }
     public void init(){
         graph_weight = findViewById(R.id.graph_weight);
         current_weight_update = findViewById(R.id.current_weight_update);
-        backbutton5 = findViewById(R.id.backbutton5);
+        backButton = findViewById(R.id.backbutton5);
         update_weight_pic = findViewById(R.id.update_weight_pic);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.backbutton5) {
-            Intent intent = new Intent(context, MainScreen.class);
-            startActivity(intent);
+        if (v.getId() == R.id.backButton) {
+            finish();
         }
 
     }

@@ -40,8 +40,7 @@ public class SportStatistics extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.backbutton11) {
-            Intent intent = new Intent(context, SportPage.class);
-            startActivity(intent);
+            finish();
         }
 
     }

@@ -34,8 +34,7 @@ public class SettingsPage extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backbutton6:
-                Intent intent = new Intent(context, MainScreen.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.log_out_btn:
                 Intent intent1 = new Intent(context, RegardingPage.class);

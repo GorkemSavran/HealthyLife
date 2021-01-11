@@ -45,8 +45,7 @@ public class FoodStatistics extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.backbutton9) {
-            Intent intent = new Intent(context, FoodPage.class);
-            startActivity(intent);
+            finish();
         }
     }
 }

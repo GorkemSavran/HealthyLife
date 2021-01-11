@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity/* implements OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(context, SearchFood.class);
+        Intent intent = new Intent(context, MainScreen.class);
         startActivity(intent);
         /*init();
         login_button.setOnClickListener(this);

@@ -58,8 +58,7 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backbutton3:
-                Intent intent = new Intent(context, GoalPage.class);
-                startActivity(intent); //radio butonlardan sadece 1 tanesini seçebilecek hale getirilmesi gerek
+                finish();
                 break;
             case R.id.cont2:
                 //eğer tüm bilgiler doluysa gitsin, hepsi dolu değilse toast: lütfen bilgilerinizin hepsini girdiğinizden emin olunuz!

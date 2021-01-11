@@ -32,8 +32,7 @@ public class GoalPage extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.cont) {
-            Intent intent = new Intent(context, PersonalInfo.class);
-            startActivity(intent); //radio butonlardan sadece 1 tanesini seçebilecek hale getirilmesi gerek
+            finish();
         }
     }
 

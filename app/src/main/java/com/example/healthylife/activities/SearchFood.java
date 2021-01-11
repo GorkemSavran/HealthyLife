@@ -46,7 +46,7 @@ public class SearchFood extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()) {
             case R.id.search_btn:
                 String searchString = searchFoodTextView.getText().toString();
-                System.out.println("SEarch String: " + searchString);
+                System.out.println("Search String: " + searchString);
                 ArrayList<Food> filteredFoods = FoodStore.getDummyFoods(searchString);
                 FragmentTransaction transaction = manager.beginTransaction();
                 FoodFragment foodFragment = (FoodFragment) manager.findFragmentByTag("Food List");
@@ -58,7 +58,7 @@ public class SearchFood extends AppCompatActivity implements View.OnClickListene
                 transaction.commit();
                 break;
             case R.id.backbutton:
-                Intent intent = new Intent(context, FoodPage.class);
+                Intent intent = new Intent(context, AddFoodPage.class);
                 startActivity(intent);
                 break;
         }
