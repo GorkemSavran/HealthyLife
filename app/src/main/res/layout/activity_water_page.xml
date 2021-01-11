@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent" android:layout_width="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WaterPage"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/backbutton10"
+            android:layout_width="77dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/material_on_background_disabled"
+            android:text="@string/back" />
+
+        <ImageView
+            android:id="@+id/water_photo_pic"
+            android:layout_width="199dp"
+            android:layout_height="162dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/water_foreground"
+            android:layout_marginStart="25dp" />
+    </LinearLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:id="@+id/graph_water" />
+
+    <TextView
+        android:id="@+id/today_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:text="@string/today_total" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/today_total_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/background_dark"
+            android:text="@string/_0_ml" />
+
+        <ImageButton
+            android:id="@+id/add_extract_water"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:onClick="waterAddExtr"
+            android:background="@color/material_on_background_disabled"
+            app:srcCompat="@mipmap/addpic_foreground">
+
+        </ImageButton>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/water_fragment"
+        android:orientation="vertical"></LinearLayout>
+</LinearLayout>
+</ScrollView>

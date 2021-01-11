@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WeightPage">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/backbutton5"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/material_on_background_disabled"
+        android:text="@string/back" />
+
+    <ImageView
+        android:id="@+id/weight_photo_pic"
+        android:layout_width="199dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_gravity="center"
+        app:srcCompat="@mipmap/weightt_foreground" />
+    </LinearLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/graph_weight" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:text="@string/current_weight" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+        <EditText
+            android:id="@+id/current_weight_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="60"
+            android:layout_gravity="center"
+            android:inputType="number" />
+
+        <ImageView
+            android:id="@+id/update_weight_pic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/weight_photo_foreground" />
+
+    </LinearLayout>
+</LinearLayout>
