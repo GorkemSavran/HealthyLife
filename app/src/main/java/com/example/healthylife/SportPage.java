@@ -1,6 +1,8 @@
 package com.example.healthylife;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,33 +13,47 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.healthylife.activities.SearchSport;
+import com.example.healthylife.fragments.SportFragment;
+import com.example.healthylife.holders.TodayDailySportHolder;
+import com.example.healthylife.models.Sport;
+
+import java.util.ArrayList;
 
 public class SportPage extends AppCompatActivity implements View.OnClickListener {
-    Button backbutton12, add_new_sport_btn, sport_statistics_btn;
-    TextView total_burn_calorie, sport_statistics;
-    ImageButton add_new_sport_image_btn, sport_statistics_image_btn;
+    Button backButton, addNewSportBtn, sportStatisticsBtn;
+    TextView totalBurnCalorie, sportStatistics;
+    ImageButton addNewSportImageBtn, sportStatisticsImageBtn;
     Context context = this;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport_page);
+        fragmentManager = getSupportFragmentManager();
         init();
-        backbutton12.setOnClickListener(this);
-        add_new_sport_btn.setOnClickListener(this);
-        sport_statistics_btn.setOnClickListener(this);
+
     }
 
     public void init() {
-        backbutton12 = findViewById(R.id.backbutton12);
-        add_new_sport_btn = findViewById(R.id.add_new_sport_btn);
-        sport_statistics_btn = findViewById(R.id.sport_statistics_btn);
-        total_burn_calorie = findViewById(R.id.total_burn_calorie);
-        sport_statistics = findViewById(R.id.sport_statistics);
-        add_new_sport_image_btn = findViewById(R.id.add_new_sport_image_btn);
-        sport_statistics_image_btn = findViewById(R.id.sport_statistics_image_btn);
+        backButton = findViewById(R.id.backbutton12);
+        addNewSportBtn = findViewById(R.id.add_new_sport_btn);
+        sportStatisticsBtn = findViewById(R.id.sport_statistics_btn);
+        totalBurnCalorie = findViewById(R.id.total_burn_calorie);
+        sportStatistics = findViewById(R.id.sport_statistics);
+        addNewSportImageBtn = findViewById(R.id.add_new_sport_image_btn);
+        sportStatisticsImageBtn = findViewById(R.id.sport_statistics_image_btn);
+
+        backButton.setOnClickListener(this);
+        addNewSportBtn.setOnClickListener(this);
+        sportStatisticsBtn.setOnClickListener(this);
 
     }
+    protected void onResume() {
+        super.onResume();
+        listSports();
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -55,5 +71,20 @@ public class SportPage extends AppCompatActivity implements View.OnClickListener
                 break;
 
         }
+    }
+
+    private void listSports() {
+        ArrayList<Sport> sports = TodayDailySportHolder.getInstance().getSports();
+        SportFragment sportFragment = (SportFragment) fragmentManager.findFragmentByTag("Added Sport");
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        if(sportFragment != null) {
+            transaction.remove(sportFragment);
+        }
+        if(!sports.isEmpty()) {
+            sportFragment = new SportFragment(sports, false);
+            transaction.add(R.id.fragment_sport, sportFragment, "Added Sport");
+            totalBurnCalorie.setText(TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories() + " KCAL");
+        }
+        transaction.commit();
     }
 }

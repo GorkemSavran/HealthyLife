@@ -13,24 +13,24 @@ import android.widget.Toast;
 import static android.widget.Toast.LENGTH_SHORT;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
-    Button backbutton2, sign_in;
-    EditText username2, email2, password2, conf_password;
+    Button backButton, signInBtn;
+    EditText usernameText, emailText, passwordText, confPasswordText;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         init();
-        backbutton2.setOnClickListener(this);
-        sign_in.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+        signInBtn.setOnClickListener(this);
     }
     public void init() {
-        backbutton2 = findViewById(R.id.backbutton2);
-        sign_in = findViewById(R.id.sign_in);
-        email2 = findViewById(R.id.email2);
-        username2 = findViewById(R.id.username2);
-        password2 = findViewById(R.id.password2);
-        conf_password = findViewById(R.id.conf_password);
+        backButton = findViewById(R.id.backbutton2);
+        signInBtn = findViewById(R.id.sign_in);
+        emailText = findViewById(R.id.email2);
+        usernameText = findViewById(R.id.username2);
+        passwordText = findViewById(R.id.password2);
+        confPasswordText = findViewById(R.id.conf_password);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.sign_in:
-                if (username2.getText().toString().equals("gorkem")  && email2.getText().toString().equals("gorkem789@") && password2.getText().toString().equals("2") &&
-                        conf_password.getText().toString().equals("2")) {
+                if (usernameText.getText().toString().equals("gorkem")  && emailText.getText().toString().equals("gorkem789@") && passwordText.getText().toString().equals("2") &&
+                        confPasswordText.getText().toString().equals("2")) {
                     Intent intent2 = new Intent(context, GoalPage.class);
                     startActivity(intent2);
 

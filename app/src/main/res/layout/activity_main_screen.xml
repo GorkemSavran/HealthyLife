@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainScreen"
@@ -94,22 +93,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/weight_pic"
-                android:layout_width="wrap_content"
+                android:layout_width="78dp"
                 android:layout_height="92dp"
+                android:layout_weight="1"
                 app:srcCompat="@mipmap/weight_foreground" />
 
             <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp">
+                android:layout_width="137dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/left_weight"
@@ -117,9 +114,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@string/_0_kg_left_to_target"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="20sp"
-                    android:textColor="@android:color/background_dark" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/current"
@@ -127,20 +124,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/current_55"
-                    android:textColor="@android:color/background_dark"
-                     />
+                    android:textColor="@android:color/background_dark" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/weight_page_btn"
                 android:layout_width="52dp"
-                android:layout_marginLeft="30dp"
                 android:layout_height="wrap_content"
                 android:background="@color/material_on_background_disabled"
                 android:layout_marginTop="20dp"
                 android:text="@string/go"
-                android:layout_marginStart="30dp" />
+                android:layout_weight="1"
+                />
 
         </LinearLayout>
         <View
@@ -155,13 +151,15 @@
 
             <ImageView
                 android:id="@+id/food_pic"
-                android:layout_width="wrap_content"
+                android:layout_width="78dp"
                 android:layout_height="92dp"
+                android:layout_weight="1"
                 app:srcCompat="@mipmap/food_foreground" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="137dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
@@ -169,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="2000 kcal taken"
+                    android:text="0 kcal taken"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="@android:color/background_dark" />
@@ -177,15 +175,17 @@
                 <ProgressBar
                     android:id="@+id/progressBar_taken"
                     style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="138dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
             <Button
                 android:id="@+id/food_page_btn"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
                 android:background="@color/material_on_background_disabled"
                 android:text="@string/go"
                 />
@@ -196,39 +196,37 @@
             android:background="@android:color/background_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/water_pic"
-                android:layout_width="wrap_content"
+                android:layout_width="78dp"
                 android:layout_height="92dp"
+                android:layout_weight="1"
                 app:srcCompat="@mipmap/water_foreground" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="137dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/taken_water"
-                    android:layout_width="wrap_content"
+                    android:layout_width="181dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@string/_0_ml"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="20sp"
-                    android:textColor="@android:color/background_dark" />
+                    android:textStyle="bold" />
 
                 <ProgressBar
                     android:id="@+id/progressBar_water"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
 
@@ -236,11 +234,10 @@
                 android:id="@+id/water_page_btn"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="111dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/material_on_background_disabled"
                 android:text="@string/go"
-                android:layout_marginStart="145dp" />
+                android:layout_weight="1" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -249,21 +246,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
+        >
 
             <ImageView
                 android:id="@+id/sport_pic"
-                android:layout_width="wrap_content"
+                android:layout_width="78dp"
                 android:layout_height="92dp"
+                android:layout_weight="1"
                 app:srcCompat="@mipmap/sport_foreground" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="137dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/burnt_calorie"
@@ -271,16 +267,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@string/_0_kcal_burnt"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="20sp"
-                    android:textColor="@android:color/background_dark" />
+                    android:textStyle="bold" />
 
                 <ProgressBar
                     android:id="@+id/progressBar_sport"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
 
@@ -288,11 +284,11 @@
                 android:id="@+id/sport_page_btn"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:background="@color/material_on_background_disabled"
                 android:text="@string/go"
-                android:layout_marginStart="75dp" />
+                 />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -300,37 +296,35 @@
             android:background="@android:color/background_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/settings_pic"
-                android:layout_width="wrap_content"
+                android:layout_width="69dp"
                 android:layout_height="92dp"
+                android:layout_weight="1"
                 app:srcCompat="@mipmap/settings_foreground" />
 
             <TextView
                 android:id="@+id/settings"
-                android:layout_width="wrap_content"
+                android:layout_width="117dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:text="@string/settings"
-                android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp"
-                android:textStyle="bold"
+                android:textColor="@android:color/background_dark"
                 android:textSize="20sp"
-                android:textColor="@android:color/background_dark" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/setting_page_btn"
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="105dp"
+                android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:background="@color/material_on_background_disabled"
                 android:text="@string/go"
-                android:layout_marginStart="105dp" />
+                />
         </LinearLayout>
         <View
             android:layout_width="match_parent"

@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +14,13 @@ import android.widget.TextView;
 import com.jjoe64.graphview.GraphView;
 
 public class WaterPage extends AppCompatActivity implements View.OnClickListener {
-    Button backbutton10, add_water_btn, extract_water_btn;
+    Button backButton, addWaterBtn, extractWaterBtn;
     Context context = this;
-    GraphView graph_water;
-    ImageButton add_extract_water;
+    GraphView graphWater;
+    ImageButton addExtractWater;
     FragmentManager manager5;
 
-    TextView today_total_ml;
+    TextView todayTotalMlText;
 
     Integer control = 0;
 
@@ -32,17 +31,17 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_page);
         init();
-        backbutton10.setOnClickListener(this);
+        backButton.setOnClickListener(this);
         manager5 = getSupportFragmentManager();
 
     }
     public void init(){
-        backbutton10 = findViewById(R.id.backbutton10);
-        graph_water = findViewById(R.id.graph_water);
-        add_extract_water = findViewById(R.id.add_extract_water);
-        add_water_btn = findViewById(R.id.add_water_btn);
-        extract_water_btn = findViewById(R.id.extract_water_btn);
-        today_total_ml = findViewById(R.id.today_total_ml);
+        backButton = findViewById(R.id.backbutton10);
+        graphWater = findViewById(R.id.graph_water);
+        addExtractWater = findViewById(R.id.add_extract_water);
+        addWaterBtn = findViewById(R.id.add_water_btn);
+        extractWaterBtn = findViewById(R.id.extract_water_btn);
+        todayTotalMlText = findViewById(R.id.today_total_ml);
 
     }
     public void waterAddExtr(View v){

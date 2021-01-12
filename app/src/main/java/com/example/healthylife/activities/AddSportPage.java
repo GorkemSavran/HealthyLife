@@ -20,6 +20,9 @@ import android.widget.TextView;
 
 import com.example.healthylife.FragmentSport;
 import com.example.healthylife.R;
+import com.example.healthylife.holders.TodayDailySportHolder;
+import com.example.healthylife.models.QuantityMeasure;
+import com.example.healthylife.models.Sport;
 import com.example.healthylife.tasks.DownloadImageTask;
 
 public class AddSportPage extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener, TextWatcher {
@@ -33,6 +36,7 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
     TextView sportNameText;
     String sportImageUrl, sportName;
     String item;
+    TodayDailySportHolder todayDailySportHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,7 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
         timeSpinner.setOnItemSelectedListener(this);
         timeOfSport.addTextChangedListener(this);
         backButton.setOnClickListener(this);
+        addSportButton.setOnClickListener(this);
     }
 
     public double calculateTotalBurnedCalories(int timeOfSport, String selectedItem, String sportName) {
@@ -105,9 +110,19 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.backbutton14) {
-            finish();
+        switch (v.getId()) {
+            case R.id.backbutton14:
+                finish();
+                break;
+            case R.id.add_sport_btn:
+                double totalCalorie = calculateTotalBurnedCalories(Integer.parseInt(timeOfSport.getText().toString()), item, sportName);
+                Sport newSport = new Sport(sportName,"0", Integer.parseInt(timeOfSport.getText().toString()), QuantityMeasure.PIECE, (int)totalCalorie);
+                // yeni oluşturucağımız sport nesnesi kullanıcının girdiği bilgilerden
+                todayDailySportHolder = TodayDailySportHolder.getInstance();
+                todayDailySportHolder.addSport(newSport);
+                finish();
         }
+
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

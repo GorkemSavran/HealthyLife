@@ -3,7 +3,6 @@ package com.example.healthylife;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +13,9 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class SportStatistics extends AppCompatActivity implements View.OnClickListener  {
-    Button backbutton11;
-    GraphView graph_sport;
-    TextView today_total_burn;
+    Button backBtn;
+    GraphView graphSport;
+    TextView todayTotalBurn;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,9 @@ public class SportStatistics extends AppCompatActivity implements View.OnClickLi
         });
     }
     public void init() {
-        graph_sport = findViewById(R.id.graph_sport);
-        today_total_burn = findViewById(R.id.today_total_burn);
-        backbutton11 = findViewById(R.id.backbutton11);
+        graphSport = findViewById(R.id.graph_sport);
+        todayTotalBurn = findViewById(R.id.today_total_burn);
+        backBtn = findViewById(R.id.backbutton11);
 
     }
     @Override

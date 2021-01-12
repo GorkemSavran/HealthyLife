@@ -3,7 +3,6 @@ package com.example.healthylife;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +14,10 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class WeightPage extends AppCompatActivity implements View.OnClickListener {
-    GraphView graph_weight;
-    EditText current_weight_update;
+    GraphView graphWeight;
+    EditText currentWeightUpdate;
     Button backButton;
-    ImageView update_weight_pic;
+    ImageView updateWeightPic;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +31,14 @@ public class WeightPage extends AppCompatActivity implements View.OnClickListene
                 new DataPoint(4, 55)
 
         });
-        graph_weight.addSeries(series);
+        graphWeight.addSeries(series);
         backButton.setOnClickListener(this);
     }
     public void init(){
-        graph_weight = findViewById(R.id.graph_weight);
-        current_weight_update = findViewById(R.id.current_weight_update);
+        graphWeight = findViewById(R.id.graph_weight);
+        currentWeightUpdate = findViewById(R.id.current_weight_update);
         backButton = findViewById(R.id.backbutton5);
-        update_weight_pic = findViewById(R.id.update_weight_pic);
+        updateWeightPic = findViewById(R.id.update_weight_pic);
     }
 
     @Override

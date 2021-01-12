@@ -1,7 +1,6 @@
 package com.example.healthylife.models;
 
-import java.util.ArrayList;
-import java.util.Map;
+
 
 public class Food {
     //private int foodID;

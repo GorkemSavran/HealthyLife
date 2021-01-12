@@ -39,25 +39,23 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Sport sport = sports.get(position);
         holder.sport = sport;
-        holder.imageButton.setImageResource((isAddingList? R.mipmap.addpic_foreground : R.mipmap.extract_foreground ));
+        holder.imageButton.setImageResource((isAddingList ? R.mipmap.addpic_foreground : R.mipmap.extract_foreground));
         holder.sportName.setText(sport.getSportName());
-        holder.burnedKcal.setText(sport.getBurnedCalorie() + " kcal");
+        holder.burnedKcal.setText(sport.getBurnedCalorie() + " kcal - ");
 
-       /* switch (food.getQuantityMeasure()) {
-            case PIECE:
-                holder.quantity.setText(food.getQuantity() + " piece");
+        switch (sport.getQuantityMeasure()) {
+            case HOUR:
+                holder.timeQuantity.setText(sport.getTimeQuantity() + " hour");
                 break;
-            case GRAM:
-                holder.quantity.setText(food.getQuantity() + "  gram");
+            case MINUTES:
+                holder.timeQuantity.setText(sport.getTimeQuantity() + "  minutes");
                 break;
-            case WATER_GLASS:
-                holder.quantity.setText(food.getQuantity() + "  water glass");
-                break;
-        }*/
-        if(isAddingList){
-            ((ViewManager)holder.burnedKcal.getParent()).removeView(holder.burnedKcal);
-            ((ViewManager)holder.timeQuantity.getParent()).removeView(holder.timeQuantity);
-            holder.sportName.setPadding(0,10,0,0);
+
+        }
+        if (isAddingList) {
+            ((ViewManager) holder.burnedKcal.getParent()).removeView(holder.burnedKcal);
+            ((ViewManager) holder.timeQuantity.getParent()).removeView(holder.timeQuantity);
+            holder.sportName.setPadding(0, 10, 0, 0);
         }
     }
 
@@ -71,7 +69,6 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
         public final View sportFragment;
 
         Sport sport;
-
         ImageButton imageButton;
         TextView sportName;
         TextView burnedKcal;
@@ -86,6 +83,7 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
             burnedKcal = (TextView) view.findViewById(R.id.burned_kcal);
             timeQuantity = (TextView) view.findViewById(R.id.time_quantity);
             imageButton.setOnClickListener(this);
+
         }
 
         @Override

@@ -3,17 +3,14 @@ package com.example.healthylife;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
-    Button backbutton, reset;
-    EditText email;
+    Button backButton, resetBtn;
+    EditText emailText;
     Context context = this;
     //FirebaseAuth fAuth;
 
@@ -22,14 +19,14 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         init();
-        backbutton.setOnClickListener(this);
-        reset.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+        resetBtn.setOnClickListener(this);
 
     }
     public void init(){
-        backbutton = findViewById(R.id.backbutton);
-        reset = findViewById(R.id.reset);
-        email = findViewById(R.id.email);
+        backButton = findViewById(R.id.backbutton);
+        resetBtn = findViewById(R.id.reset);
+        emailText = findViewById(R.id.email);
         //fAuth = FirebaseAuth.getInstance();
     }
 

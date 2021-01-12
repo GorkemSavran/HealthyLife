@@ -2,7 +2,6 @@ package com.example.healthylife;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Person;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class PersonalInfo2 extends AppCompatActivity implements View.OnClickListener  {
-    Button backbutton4, cont3;
-    EditText height_num, current_weight_num, target_weight_num;
+    Button backButton, continueBtn;
+    EditText heightNum, currentWeightNum, targetWeightNum;
     Context context = this;
 
     @Override
@@ -20,17 +19,17 @@ public class PersonalInfo2 extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info2);
         init();
-        backbutton4.setOnClickListener(this);
-        cont3.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+        continueBtn.setOnClickListener(this);
 
     }
     public void init()
     {
-        backbutton4 = findViewById(R.id.backbutton4);
-        cont3 = findViewById(R.id.cont3);
-        height_num = findViewById(R.id.height_num);
-        current_weight_num = findViewById(R.id.current_weight_num);
-        target_weight_num = findViewById(R.id.target_weight_num);
+        backButton = findViewById(R.id.backbutton4);
+        continueBtn = findViewById(R.id.cont3);
+        heightNum = findViewById(R.id.height_num);
+        currentWeightNum = findViewById(R.id.current_weight_num);
+        targetWeightNum = findViewById(R.id.target_weight_num);
     }
 
     @Override

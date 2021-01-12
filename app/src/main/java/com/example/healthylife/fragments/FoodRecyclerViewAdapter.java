@@ -42,7 +42,7 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         holder.food = food;
         holder.imageButton.setImageResource((isAddingList? R.mipmap.addpic_foreground : R.mipmap.extract_foreground ));
         holder.foodName.setText(food.getFoodName());
-        holder.kcal.setText(food.getTotalCalories() + " kcal");
+        holder.kcal.setText(food.getTotalCalories() + " kcal - ");
         switch (food.getQuantityMeasure()) {
             case PIECE:
                 holder.quantity.setText(food.getQuantity() + " piece");

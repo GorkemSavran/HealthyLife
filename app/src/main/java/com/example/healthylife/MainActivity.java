@@ -2,7 +2,6 @@ package com.example.healthylife;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 
 import android.content.Context;
@@ -12,17 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.healthylife.activities.SearchFood;
-import com.example.healthylife.fragments.FoodFragment;
-import com.example.healthylife.models.Food;
-
-import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity/* implements OnClickListener*/ {
-    Button login_button;
-    EditText username, password;
-    TextView forgot_pass, sign_up;
+    Button loginButton;
+    EditText usernameText, passwordText;
+    TextView forgotPassText, signUpText;
     Context context =this;
     FragmentManager manager;
     @Override
@@ -32,18 +25,18 @@ public class MainActivity extends AppCompatActivity/* implements OnClickListener
         Intent intent = new Intent(context, MainScreen.class);
         startActivity(intent);
         /*init();
-        login_button.setOnClickListener(this);
-        forgot_pass.setOnClickListener(this);
-        sign_up.setOnClickListener(this);*/
+        loginButton.setOnClickListener(this);
+        forgotPassText.setOnClickListener(this);
+        signUpText.setOnClickListener(this);*/
 
     }
-    /*
+   /*
     public void init(){
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        forgot_pass = findViewById(R.id.forgot_pass);
-        sign_up =  findViewById(R.id.sign_up);
-        login_button= findViewById(R.id.login_button);
+        usernameText = findViewById(R.id.username);
+        passwordText = findViewById(R.id.password);
+        forgotPassText = findViewById(R.id.forgot_pass);
+        signUpText =  findViewById(R.id.sign_up);
+        loginButton = findViewById(R.id.login_button);
     }
 
 
@@ -52,7 +45,7 @@ public class MainActivity extends AppCompatActivity/* implements OnClickListener
         //deren bir numara <3
       switch (v.getId()){
           case R.id.login_button:
-              if (username.getText().toString().equals("")  && password.getText().toString().equals("") ) {
+              if (usernameText.getText().toString().equals("")  && passwordText.getText().toString().equals("") ) {
                     Intent intent1 = new Intent (context, MainScreen.class);
                     startActivity(intent1); //explicit intent -> gideceği yer belli
                   // DATABASE 'E GİDİP BÖYLE BİR KULLANICI VAR MI DİYE BAKMALI, VARSA LOGIN -> MAIN SAYFA

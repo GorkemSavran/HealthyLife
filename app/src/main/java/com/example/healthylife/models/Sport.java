@@ -17,7 +17,6 @@ public class Sport {
 
     }
 
-
     public String getSportName() {
         return sportName;
     }
@@ -42,11 +41,15 @@ public class Sport {
         this.timeQuantity = timeQuantity;
     }
 
+    public int getBurnedCalorie() {
+        return burnedCalorie;
+    }
+
     public QuantityMeasure getQuantityMeasure() {
         return quantityMeasure;
     }
 
-    public int getBurnedCalorie() {
-        return burnedCalorie;
+    public void setQuantityMeasure(QuantityMeasure quantityMeasure) {
+        this.quantityMeasure = quantityMeasure;
     }
 }

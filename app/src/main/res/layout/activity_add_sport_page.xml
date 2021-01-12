@@ -75,7 +75,6 @@
         android:text="@string/add"
         android:ems="12"
         android:layout_gravity="center"
-        android:onClick="addSport"
         android:layout_marginTop="20dp">
     </Button>
 

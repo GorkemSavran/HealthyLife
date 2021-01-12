@@ -12,23 +12,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class PersonalInfo extends AppCompatActivity implements View.OnClickListener {
-    Button backbutton3, cont2;
+    Button backButton, continueBtn;
     RadioButton radioBtnMan, radioBtnWoman;
     EditText birthday;
-    Spinner act_spinner;
+    Spinner actSpinner;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info);
         init();
-        backbutton3.setOnClickListener(this);
-        cont2.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+        continueBtn.setOnClickListener(this);
 
-        act_spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+        actSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
     //position -> sırası, view -> tıklanan eleman
@@ -46,12 +45,12 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
 
     public void init()
     {
-     backbutton3 = findViewById(R.id.backbutton3);
-     cont2 = findViewById(R.id.cont2);
+     backButton = findViewById(R.id.backbutton3);
+     continueBtn = findViewById(R.id.cont2);
      radioBtnMan = findViewById(R.id.radioBtnMan);
      radioBtnWoman = findViewById(R.id.radioBtnWoman);
      birthday = findViewById(R.id.birthday);
-     act_spinner =findViewById(R.id.act_spinner);
+     actSpinner =findViewById(R.id.act_spinner);
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.example.healthylife;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,20 +13,20 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class RegardingPage extends AppCompatActivity implements  View.OnClickListener {
     RatingBar ratingBar;
-    Button cancel_btn, submit_btn;
+    Button cancelBtn, submitBtn;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regarding_page);
         init();
-        cancel_btn.setOnClickListener(this);
-        submit_btn.setOnClickListener(this);
+        cancelBtn.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
     }
     public void init(){
         ratingBar = findViewById(R.id.ratingBar);
-        cancel_btn = findViewById(R.id.cancel_btn);
-        submit_btn = findViewById(R.id.submit_btn);
+        cancelBtn = findViewById(R.id.cancel_btn);
+        submitBtn = findViewById(R.id.submit_btn);
     }
     @Override
     public void onClick(View v) {

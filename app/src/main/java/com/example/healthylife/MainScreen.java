@@ -11,60 +11,65 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.healthylife.holders.TodayDailyFoodHolder;
+import com.example.healthylife.holders.TodayDailySportHolder;
 
 public class MainScreen extends AppCompatActivity implements View.OnClickListener {
-    Button weight_page_btn, food_page_btn,water_page_btn,sport_page_btn,setting_page_btn;
-    ImageView weight_pic, food_pic,water_pic,sport_pic,settings_pic;
-    TextView consumed_calorie, target_calorie,left_weight, taken_calorie,taken_water,burnt_calorie,settings;
+    Button weightPageBtn, foodPageBtn, waterPageBtn, sportPageBtn, settingPageBtn;
+    ImageView weightPic, foodPic, waterPic, sportPic, settingsPic;
+    TextView consumedCalorie, targetCalorie, leftWeight, takenCalorie, takenWater, burntCalorie,settings;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         init();
-        weight_page_btn.setOnClickListener(this);
-        food_page_btn.setOnClickListener(this);
-        water_page_btn.setOnClickListener(this);
-        sport_page_btn.setOnClickListener(this);
-        setting_page_btn.setOnClickListener(this);
-        weight_pic.setOnClickListener(this);
-        food_pic.setOnClickListener(this);
-        water_pic.setOnClickListener(this);
-        sport_pic.setOnClickListener(this);
-        settings_pic.setOnClickListener(this);
-        left_weight.setOnClickListener(this);
-        taken_calorie.setOnClickListener(this);
-        taken_water.setOnClickListener(this);
-        burnt_calorie.setOnClickListener(this);
-        settings.setOnClickListener(this);
+
 
     }
     public void init(){
-        weight_page_btn = findViewById(R.id.weight_page_btn);
-        food_page_btn = findViewById(R.id.food_page_btn);
-        water_page_btn = findViewById(R.id.water_page_btn);
-        sport_page_btn = findViewById(R.id.sport_page_btn);
-        setting_page_btn = findViewById(R.id.setting_page_btn);
-        weight_pic = findViewById(R.id.weight_pic);
-        food_pic = findViewById(R.id.food_pic);
-        water_pic = findViewById(R.id.water_pic);
-        sport_pic = findViewById(R.id.sport_pic);
-        settings_pic = findViewById(R.id.settings_pic);
-        consumed_calorie = findViewById(R.id.consumed_calorie);
-        target_calorie = findViewById(R.id.target_calorie);
-        left_weight = findViewById(R.id.left_weight);
-        taken_calorie = findViewById(R.id.taken_calorie);
-        taken_water = findViewById(R.id.taken_water);
-        burnt_calorie = findViewById(R.id.burnt_calorie);
+        weightPageBtn = findViewById(R.id.weight_page_btn);
+        foodPageBtn = findViewById(R.id.food_page_btn);
+        waterPageBtn = findViewById(R.id.water_page_btn);
+        sportPageBtn = findViewById(R.id.sport_page_btn);
+        settingPageBtn = findViewById(R.id.setting_page_btn);
+        weightPic = findViewById(R.id.weight_pic);
+        foodPic = findViewById(R.id.food_pic);
+        waterPic = findViewById(R.id.water_pic);
+        sportPic = findViewById(R.id.sport_pic);
+        settingsPic = findViewById(R.id.settings_pic);
+        consumedCalorie = findViewById(R.id.consumed_calorie);
+        targetCalorie = findViewById(R.id.target_calorie);
+        leftWeight = findViewById(R.id.left_weight);
+        takenCalorie = findViewById(R.id.taken_calorie);
+        takenWater = findViewById(R.id.taken_water);
+        burntCalorie = findViewById(R.id.burnt_calorie);
         settings = findViewById(R.id.settings);
+
+        weightPageBtn.setOnClickListener(this);
+        foodPageBtn.setOnClickListener(this);
+        waterPageBtn.setOnClickListener(this);
+        sportPageBtn.setOnClickListener(this);
+        settingPageBtn.setOnClickListener(this);
+        weightPic.setOnClickListener(this);
+        foodPic.setOnClickListener(this);
+        waterPic.setOnClickListener(this);
+        sportPic.setOnClickListener(this);
+        settingsPic.setOnClickListener(this);
+        leftWeight.setOnClickListener(this);
+        takenCalorie.setOnClickListener(this);
+        takenWater.setOnClickListener(this);
+        burntCalorie.setOnClickListener(this);
+        settings.setOnClickListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         int totalCalories = TodayDailyFoodHolder.getInstance().getTodayTotalCalories();
-        consumed_calorie.setText(totalCalories + " kcal");
-        taken_calorie.setText(totalCalories + " kcal taken");
+        consumedCalorie.setText(totalCalories + " kcal");
+        takenCalorie.setText(totalCalories + " kcal taken");
+        int totalBurnedCalories = TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories();
+        burntCalorie.setText(totalBurnedCalories + " kcal burn");
     }
 
     @Override
