@@ -42,8 +42,10 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
         holder.imageButton.setImageResource((isAddingList ? R.mipmap.addpic_foreground : R.mipmap.extract_foreground));
         holder.sportName.setText(sport.getSportName());
         holder.burnedKcal.setText(sport.getBurnedCalorie() + " kcal - ");
+        System.out.println(sport.getQuantityMeasure());
 
         switch (sport.getQuantityMeasure()) {
+
             case HOUR:
                 holder.timeQuantity.setText(sport.getTimeQuantity() + " hour");
                 break;

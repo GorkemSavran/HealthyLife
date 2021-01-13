@@ -38,7 +38,6 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Food food = foods.get(position);
-
         holder.food = food;
         holder.imageButton.setImageResource((isAddingList? R.mipmap.addpic_foreground : R.mipmap.extract_foreground ));
         holder.foodName.setText(food.getFoodName());

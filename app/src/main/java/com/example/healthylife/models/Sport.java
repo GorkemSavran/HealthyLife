@@ -9,7 +9,7 @@ public class Sport {
 
 
     public Sport(String sportName, String sportImageUrl, int timeQuantity, QuantityMeasure quantityMeasure, int burnedCalorie) {
-        this. sportName =  sportName;
+        this.sportName =  sportName;
         this.sportImageUrl = sportImageUrl;
         this.timeQuantity = timeQuantity;
         this.quantityMeasure = quantityMeasure;
