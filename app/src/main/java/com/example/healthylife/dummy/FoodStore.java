@@ -6,15 +6,6 @@ import com.example.healthylife.models.QuantityMeasure;
 import java.util.ArrayList;
 
 public class FoodStore {
-    /*public static ArrayList<Food> getDummyFoods() {
-        ArrayList<Food> foods = new ArrayList<Food>();
-        foods.add(new Food(1,"Egg",0, QuantityMeasure.PIECE,100, caloriePer100Gram));
-        foods.add(new Food(2,"Egg oil",0, QuantityMeasure.PIECE,100, caloriePer100Gram));
-        foods.add(new Food(3,"RedBull",0, QuantityMeasure.PIECE,100, caloriePer100Gram));
-        foods.add(new Food(4,"Lifalif",0, QuantityMeasure.PIECE,100, caloriePer100Gram));
-        foods.add(new Food(5,"Deren",0, QuantityMeasure.PIECE,100, caloriePer100Gram));
-        return foods;
-    }*/
 
     public static ArrayList<Food> getDummyFoods(String searchString) {
         ArrayList<Food> foods = new ArrayList<Food>();

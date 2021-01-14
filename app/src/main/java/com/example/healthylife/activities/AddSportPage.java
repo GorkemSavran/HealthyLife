@@ -2,8 +2,6 @@ package com.example.healthylife.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +12,8 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.example.healthylife.FragmentSport;
 import com.example.healthylife.R;
 import com.example.healthylife.holders.TodayDailySportHolder;
 import com.example.healthylife.models.QuantityMeasure;
@@ -118,7 +113,6 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
                 QuantityMeasure measure = item.equals("hour") ? QuantityMeasure.HOUR : QuantityMeasure.MINUTES;
                 double totalCalorie = calculateTotalBurnedCalories(Integer.parseInt(timeOfSport.getText().toString()), item, sportName);
                 Sport newSport = new Sport(sportName,"0", Integer.parseInt(timeOfSport.getText().toString()), measure, (int)totalCalorie);
-                // yeni oluşturucağımız sport nesnesi kullanıcının girdiği bilgilerden
                 todayDailySportHolder = TodayDailySportHolder.getInstance();
                 todayDailySportHolder.addSport(newSport);
                 finish();

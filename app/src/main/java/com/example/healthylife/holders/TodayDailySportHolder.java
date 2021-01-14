@@ -1,6 +1,4 @@
 package com.example.healthylife.holders;
-
-
 import com.example.healthylife.models.DailySport;
 import com.example.healthylife.models.Sport;
 
@@ -12,7 +10,7 @@ public class TodayDailySportHolder {
     private DailySport todayDailySport;
 
     private TodayDailySportHolder() {
-        // EĞer bugün içerisinde girmişse databaseden onun bilgilerini alıp başlat
+        // Eğer bugün içerisinde girmişse databaseden onun bilgilerini alıp başlat
 
         //Eğer girmemişse 0dan oluştur
         todayDailySport = new DailySport();

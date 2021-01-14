@@ -7,12 +7,16 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 
-public class MainActivity extends AppCompatActivity/* implements OnClickListener*/ {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button loginButton;
     EditText usernameText, passwordText;
     TextView forgotPassText, signUpText;
@@ -22,15 +26,13 @@ public class MainActivity extends AppCompatActivity/* implements OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(context, MainScreen.class);
-        startActivity(intent);
-        /*init();
+        init();
         loginButton.setOnClickListener(this);
         forgotPassText.setOnClickListener(this);
-        signUpText.setOnClickListener(this);*/
+        signUpText.setOnClickListener(this);
 
     }
-   /*
+
     public void init(){
         usernameText = findViewById(R.id.username);
         passwordText = findViewById(R.id.password);
@@ -51,21 +53,21 @@ public class MainActivity extends AppCompatActivity/* implements OnClickListener
                   // DATABASE 'E GİDİP BÖYLE BİR KULLANICI VAR MI DİYE BAKMALI, VARSA LOGIN -> MAIN SAYFA
                   // YOKSA DEVAMKE ->HATA
               }else{
-                  Toast.makeText(context, "Kullanıcı adı veya şifre hatalı!", LENGTH_SHORT).show();
+                  Toast.makeText(context, "Username or password is not correct!", LENGTH_SHORT).show();
 
               }
               break;
 
           case R.id.forgot_pass:
               Intent intent2 = new Intent (context, ForgotPassword.class);
-              startActivity(intent2); //explicit intent -> gideceği yer belli
+              startActivity(intent2);
               break;
           case R.id.sign_up:
               Intent intent3 = new Intent (context, SignUp.class);
-              startActivity(intent3); //explicit intent -> gideceği yer belli
+              startActivity(intent3);
               break;
 
 
       }
-    }*/
+    }
 }

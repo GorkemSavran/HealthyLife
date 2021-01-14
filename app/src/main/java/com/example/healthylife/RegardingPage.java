@@ -33,18 +33,14 @@ public class RegardingPage extends AppCompatActivity implements  View.OnClickLis
         switch (v.getId()) {
             case R.id.cancel_btn:
                 Toast.makeText(context, "Remaind me later!", LENGTH_SHORT).show();
-                //getActivity().finish();
-                //System.exit(0);
+                finishAffinity();
                 break;
 
             case R.id.submit_btn:
-                //Burda yıldızlardan birine basmış olmalı -> gerçi basmazsa sıfır da olabilir
                 Toast.makeText(context, "Thank you for regarding!", LENGTH_SHORT).show();
-                //getActivity().finish();
-                System.exit(0);
+                finishAffinity();
                 break;
 
-                // Bu butonlardan birine tıklayınca diğerine tıklamamalııı, uygulama kapanmalı bebek kuşum
         }
     }
 }

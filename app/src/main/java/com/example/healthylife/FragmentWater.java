@@ -1,6 +1,4 @@
 package com.example.healthylife;
-
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -45,6 +43,7 @@ public class FragmentWater extends Fragment {
             public void onClick(View v) {
                 TodayDailyFoodHolder.getInstance().incrementTodayWater(Integer.parseInt(howMuchWater.getText().toString()));
                 ((WaterPage)getActivity()).updateWaterText();
+                ((WaterPage)getActivity()).setGraphWeight();
             }
         });
 
@@ -53,6 +52,7 @@ public class FragmentWater extends Fragment {
             public void onClick(View v) {
                 TodayDailyFoodHolder.getInstance().decrementTodayWater(Integer.parseInt(howMuchWater.getText().toString()));
                 ((WaterPage)getActivity()).updateWaterText();
+                ((WaterPage)getActivity()).setGraphWeight();
             }
         });
 

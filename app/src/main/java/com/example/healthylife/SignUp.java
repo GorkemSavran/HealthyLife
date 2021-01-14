@@ -40,15 +40,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.sign_in:
-                if (usernameText.getText().toString().equals("gorkem")  && emailText.getText().toString().equals("gorkem789@") && passwordText.getText().toString().equals("2") &&
-                        confPasswordText.getText().toString().equals("2")) {
+                if (usernameText.getText().toString().equals("unicorn")  && emailText.getText().toString().equals("unicorn@gmail.com") && passwordText.getText().toString().equals("1") &&
+                        confPasswordText.getText().toString().equals("1")) {
                     Intent intent2 = new Intent(context, GoalPage.class);
                     startActivity(intent2);
 
                 }
-                else {
-                    Toast.makeText(context, "Kullanıcı adı kullanılmakta!", LENGTH_SHORT).show();
-                }
+
         }
     }
 }

@@ -127,9 +127,20 @@ public class AddFoodPage extends AppCompatActivity  implements View.OnClickListe
                 finish();
                 break;
             case R.id.add_food_btn:
+                QuantityMeasure measure = QuantityMeasure.PIECE;
+                switch (item) {
+                    case "piece":
+                        measure = QuantityMeasure.PIECE;
+                        break;
+                    case "gram":
+                        measure = QuantityMeasure.GRAM;
+                        break;
+                    case "waterglass":
+                        measure = QuantityMeasure.WATER_GLASS;
+                        break;
+                }
                 double totalCalorie = calculateTotalCalories(Integer.parseInt(numberOfFood.getText().toString()), item, foodName);
-                Food newFood = new Food(foodName,"0", Integer.parseInt(numberOfFood.getText().toString()), QuantityMeasure.PIECE, (int)totalCalorie);
-                // yeni oluşturucağımız food nesnesi kullanıcının girdiği bilgilerden
+                Food newFood = new Food(foodName,"0", Integer.parseInt(numberOfFood.getText().toString()), measure, (int)totalCalorie);
                 todayDailyFoodHolder = TodayDailyFoodHolder.getInstance();
                 todayDailyFoodHolder.addFood(newFood);
                 finish();

@@ -173,11 +173,12 @@
                     android:textColor="@android:color/background_dark" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar_taken"
+                    android:id="@+id/progressBar_food"
                     style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="138dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    />
 
             </LinearLayout>
             <Button

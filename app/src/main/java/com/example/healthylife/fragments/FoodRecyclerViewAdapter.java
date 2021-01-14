@@ -1,9 +1,6 @@
 package com.example.healthylife.fragments;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,7 +71,6 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
         public final View foodFragment;
 
         Food food;
-
         ImageButton imageButton;
         TextView foodName;
         TextView kcal;
@@ -101,7 +97,6 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
             if(isAddingList) {
                 Intent addFoodPage = new Intent(foodFragment.getContext(), AddFoodPage.class);
                 addFoodPage.putExtra("foodName", this.food.getFoodName());
-                //addFoodPage.putExtra("caloriePer100Gram", this.food.getCaloriePer100Gram());
                 addFoodPage.putExtra("foodImageUrl", this.food.getFoodImageUrl());
                 startActivity(foodFragment.getContext(), addFoodPage,null);
             }else {

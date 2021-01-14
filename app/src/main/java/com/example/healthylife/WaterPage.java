@@ -8,11 +8,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.healthylife.holders.TodayDailyFoodHolder;
+import com.example.healthylife.holders.TodayDailyUserHolder;
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class WaterPage extends AppCompatActivity implements View.OnClickListener {
     Button backButton, addWaterBtn, extractWaterBtn;
@@ -22,6 +30,7 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
     FragmentManager manager5;
 
     TextView todayTotalMlText;
+    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd");
 
     Integer control = 0;
 
@@ -43,8 +52,38 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         addWaterBtn = findViewById(R.id.add_water_btn);
         extractWaterBtn = findViewById(R.id.extract_water_btn);
         todayTotalMlText = findViewById(R.id.today_total_ml);
+        setGraphWeight();
         updateWaterText();
 
+    }
+    public void setGraphWeight() {
+        Date[] dates = {
+                new Date(2021,8,22,12,0),
+                new Date(2021,8,23,12,0),
+                new Date(2021,8,24,12,0),
+                new Date(2021,8,26,12,0),
+                new Date(2021,8,28,12,0),
+        };
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+                new DataPoint(dates[0], 2000),
+                new DataPoint(dates[1], 2400),
+                new DataPoint(dates[2], 2300),
+                new DataPoint(dates[3], 2100),
+                new DataPoint(dates[4], TodayDailyFoodHolder.getInstance().getTodayWater())
+        });
+        graphWater.removeAllSeries();
+        graphWater.addSeries(series);
+        graphWater.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if(isValueX) {
+
+                    return sdf.format(new Date((long) value));
+                }else {
+                    return super.formatLabel(value, isValueX);
+                }
+            }
+        });
     }
 
     public void  updateWaterText() {

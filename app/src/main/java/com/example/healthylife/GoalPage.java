@@ -32,7 +32,8 @@ public class GoalPage extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.cont) {
-            finish();
+            Intent intent = new Intent(context, PersonalInfo.class);
+            startActivity(intent);
         }
     }
 

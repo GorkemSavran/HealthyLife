@@ -20,6 +20,11 @@ public class TodayDailyUserHolder {
         this.user = UserStore.getDummyUser();
     }
 
+    public static TodayDailyUserHolder getInstance() { return instance; }
+
+    public String getUsername() { return user.getUsername(); }
+    public String getEmail() { return user.getEmail(); }
+    public float getTargetWeight() { return todayDailyUser.getTargetWeight(); }
     public GENDER getGender() { return user.getGender(); }
     public Date getBirthday() { return user.getBirthday(); }
     public ACTIVITY_LEVEL getActivityLevel() { return todayDailyUser.getActivityLevel(); }
@@ -83,4 +88,7 @@ public class TodayDailyUserHolder {
         return dailyCaloryRequirement;
     }
 
+    public void setCurrentWeight(float currentWeight) {
+        todayDailyUser.setCurrentWeight(currentWeight);
+    }
 }

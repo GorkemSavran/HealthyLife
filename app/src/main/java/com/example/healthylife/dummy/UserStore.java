@@ -11,9 +11,8 @@ import java.util.Date;
 public class UserStore {
 
     public static User getDummyUser() {
-        Date dereniminBirthDayi = new Date(27081999);
-        System.out.println(dereniminBirthDayi.getDay());
-        User user = new User("derenimaşkuşum", "cadideren@hotmail.com", dereniminBirthDayi, GENDER.WOMAN);
+        Date unicornBirthDay = new Date(1999,8,27);
+        User user = new User("Unicorn", "unicorn@gmail.com", unicornBirthDay, GENDER.WOMAN);
         return user;
     }
 

@@ -39,7 +39,6 @@ public class PersonalInfo2 extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.cont3:
-                //eğer tüm bilgiler doluysa gitsin, hepsi dolu değilse toast: lütfen bilgilerinizin hepsini girdiğinizden emin olunuz!
                 Intent intent1 = new Intent(context,MainScreen.class);
                 startActivity(intent1);
 

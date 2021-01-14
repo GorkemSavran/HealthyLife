@@ -9,12 +9,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.healthylife.FoodPage;
 import com.example.healthylife.R;
 import com.example.healthylife.SportPage;
 import com.example.healthylife.activities.AddSportPage;
-import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.holders.TodayDailySportHolder;
 import com.example.healthylife.models.Sport;
 

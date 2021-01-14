@@ -8,16 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.holders.TodayDailySportHolder;
+import com.example.healthylife.holders.TodayDailyUserHolder;
 
 public class MainScreen extends AppCompatActivity implements View.OnClickListener {
     Button weightPageBtn, foodPageBtn, waterPageBtn, sportPageBtn, settingPageBtn;
     ImageView weightPic, foodPic, waterPic, sportPic, settingsPic;
-    TextView consumedCalorie, targetCalorie, leftWeight, takenCalorie, takenWater, burntCalorie,settings;
+    TextView current, consumedCalorie, targetCalorie, leftWeight, takenCalorie, takenWater, burntCalorie,settings;
     Context context = this;
+    ProgressBar progressBarSport, progressBarWater, progressBarFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,9 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
 
     }
     public void init(){
+        progressBarSport = findViewById(R.id.progressBar_sport);
+        progressBarWater = findViewById(R.id.progressBar_water);
+        progressBarFood = findViewById(R.id.progressBar_food);
         weightPageBtn = findViewById(R.id.weight_page_btn);
         foodPageBtn = findViewById(R.id.food_page_btn);
         waterPageBtn = findViewById(R.id.water_page_btn);
@@ -45,6 +51,11 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
         takenWater = findViewById(R.id.taken_water);
         burntCalorie = findViewById(R.id.burnt_calorie);
         settings = findViewById(R.id.settings);
+        current = findViewById(R.id.current);
+
+        progressBarFood.setMax(TodayDailyUserHolder.getInstance().getTargetCalories());
+        progressBarWater.setMax(3000);
+        progressBarSport.setMax(700);
 
         weightPageBtn.setOnClickListener(this);
         foodPageBtn.setOnClickListener(this);
@@ -68,10 +79,16 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
         super.onResume();
         int totalCalories = TodayDailyFoodHolder.getInstance().getTodayTotalCalories();
         consumedCalorie.setText(totalCalories + " kcal");
+        progressBarFood.setProgress(totalCalories);
         takenCalorie.setText(totalCalories + " kcal taken");
         int totalBurnedCalories = TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories();
         burntCalorie.setText(totalBurnedCalories + " kcal burn");
+        progressBarSport.setProgress(totalBurnedCalories);
         takenWater.setText(TodayDailyFoodHolder.getInstance().getTodayWater() + " ml");
+        progressBarWater.setProgress(TodayDailyFoodHolder.getInstance().getTodayWater());
+        targetCalorie.setText(TodayDailyUserHolder.getInstance().getTargetCalories() + " kcal");
+        current.setText(" Current: " +String.valueOf(TodayDailyUserHolder.getInstance().getCurrentWeight()));
+        leftWeight.setText((TodayDailyUserHolder.getInstance().getCurrentWeight() - TodayDailyUserHolder.getInstance().getTargetWeight()) + " kg left to target");
     }
 
     @Override

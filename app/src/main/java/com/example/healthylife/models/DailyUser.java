@@ -14,6 +14,7 @@ public class DailyUser {
         this.currentWeight = currentWeight;
         this.targetWeight = targetWeight;
         this.activityLevel = activityLevel;
+        this.targetCalorie = 0;
     }
 
     public GOAL getGoal() {

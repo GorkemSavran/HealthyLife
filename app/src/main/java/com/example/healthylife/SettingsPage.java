@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.healthylife.holders.TodayDailyUserHolder;
+
 public class SettingsPage extends AppCompatActivity implements View.OnClickListener {
     Button backButton, logOutBtn;
     TextView settingsUsername, settingsEmail, settingsChangeGoals;
@@ -28,6 +30,9 @@ public class SettingsPage extends AppCompatActivity implements View.OnClickListe
         settingsUsername = findViewById(R.id.settings_username);
         settingsEmail = findViewById(R.id.settings_email);
         settingsChangeGoals = findViewById(R.id.settings_change_goals);
+
+        settingsUsername.setText(TodayDailyUserHolder.getInstance().getUsername());
+        settingsEmail.setText(TodayDailyUserHolder.getInstance().getEmail());
     }
 
     @Override

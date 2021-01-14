@@ -31,6 +31,7 @@
 
     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
+        android:layout_gravity="center"
         android:layout_height="200dp"
         android:id="@+id/graph_weight" />
 
@@ -53,16 +54,16 @@
             android:id="@+id/current_weight_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="60"
+            android:text="60"
             android:layout_gravity="center"
             android:inputType="number" />
 
-        <ImageView
-            android:id="@+id/update_weight_pic"
+        <Button
+            android:id="@+id/update_weight_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            app:srcCompat="@mipmap/weight_photo_foreground" />
+            android:text="OK"/>
 
     </LinearLayout>
 </LinearLayout>

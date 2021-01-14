@@ -3,7 +3,6 @@ package com.example.healthylife.models;
 
 
 public class Food {
-    //private int foodID;
     private String foodName;
     private String foodImageUrl;
     private int quantity;

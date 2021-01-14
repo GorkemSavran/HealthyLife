@@ -30,13 +30,11 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
         actSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-    //position -> sırası, view -> tıklanan eleman
-                //Toast.makeText(context, "Seçilen eleman: "+parent.getItemAtPosition(position), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-// her seçtiğimiz kaldırıldığında çalışan metod -> seçilecek eleman kalmadı gibi bir şey
+
             }
         });
     }
@@ -60,7 +58,6 @@ public class PersonalInfo extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.cont2:
-                //eğer tüm bilgiler doluysa gitsin, hepsi dolu değilse toast: lütfen bilgilerinizin hepsini girdiğinizden emin olunuz!
                 Intent intent1 = new Intent(context, PersonalInfo2.class);
                 startActivity(intent1);
 
