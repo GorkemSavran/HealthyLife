@@ -18,6 +18,7 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
     ImageView weightPic, foodPic, waterPic, sportPic, settingsPic;
     TextView consumedCalorie, targetCalorie, leftWeight, takenCalorie, takenWater, burntCalorie,settings;
     Context context = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,7 @@ public class MainScreen extends AppCompatActivity implements View.OnClickListene
         takenCalorie.setText(totalCalories + " kcal taken");
         int totalBurnedCalories = TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories();
         burntCalorie.setText(totalBurnedCalories + " kcal burn");
+        takenWater.setText(TodayDailyFoodHolder.getInstance().getTodayWater() + " ml");
     }
 
     @Override

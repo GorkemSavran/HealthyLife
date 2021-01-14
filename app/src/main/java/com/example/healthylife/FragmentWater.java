@@ -1,5 +1,6 @@
 package com.example.healthylife;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,52 +11,24 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentWater#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.healthylife.holders.TodayDailyFoodHolder;
+
 public class FragmentWater extends Fragment {
 
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public FragmentWater() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentWater.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FragmentWater newInstance(String param1, String param2) {
         FragmentWater fragment = new FragmentWater();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
 
     }
 
@@ -63,12 +36,26 @@ public class FragmentWater extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_water, container, false);
-        final EditText how_much_water = (EditText) view.findViewById(R.id.how_much_water);
-        Button add_water_btn = (Button) view.findViewById(R.id.add_water_btn);
-        Button extract_water_btn = (Button) view.findViewById(R.id.extract_water_btn);
+        final EditText howMuchWater = (EditText) view.findViewById(R.id.how_much_water);
+        Button addWaterBtn = (Button) view.findViewById(R.id.add_water_btn);
+        Button extractWaterBtn = (Button) view.findViewById(R.id.extract_water_btn);
 
+        addWaterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TodayDailyFoodHolder.getInstance().incrementTodayWater(Integer.parseInt(howMuchWater.getText().toString()));
+                ((WaterPage)getActivity()).updateWaterText();
+            }
+        });
 
-        // Inflate the layout for this fragment
+        extractWaterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TodayDailyFoodHolder.getInstance().decrementTodayWater(Integer.parseInt(howMuchWater.getText().toString()));
+                ((WaterPage)getActivity()).updateWaterText();
+            }
+        });
+
         return view;
 
     }

@@ -42,8 +42,8 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_sport_page);
-        init();
         manager = getSupportFragmentManager();
+        init();
     }
     public void init(){
         backButton = findViewById(R.id.backbutton14);
@@ -115,8 +115,9 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.add_sport_btn:
+                QuantityMeasure measure = item.equals("hour") ? QuantityMeasure.HOUR : QuantityMeasure.MINUTES;
                 double totalCalorie = calculateTotalBurnedCalories(Integer.parseInt(timeOfSport.getText().toString()), item, sportName);
-                Sport newSport = new Sport(sportName,"0", Integer.parseInt(timeOfSport.getText().toString()), QuantityMeasure.PIECE, (int)totalCalorie);
+                Sport newSport = new Sport(sportName,"0", Integer.parseInt(timeOfSport.getText().toString()), measure, (int)totalCalorie);
                 // yeni oluşturucağımız sport nesnesi kullanıcının girdiği bilgilerden
                 todayDailySportHolder = TodayDailySportHolder.getInstance();
                 todayDailySportHolder.addSport(newSport);
@@ -127,6 +128,7 @@ public class AddSportPage extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         item = (String) parent.getItemAtPosition(position);
+        System.out.println(item);
         double totalCalorie = calculateTotalBurnedCalories(Integer.parseInt(timeOfSport.getText().toString()), item, sportName);
         howMuchBurn.setText(String.format("%s Kcal", (int)totalCalorie));
     }

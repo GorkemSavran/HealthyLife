@@ -18,7 +18,6 @@ public class SportStore {
             if(sport.getSportName().toLowerCase().contains(searchString.toLowerCase())){
                 filteredSports.add(sport);
             }
-
         }
         return filteredSports;
     }

@@ -23,7 +23,6 @@ public class TodayDailySportHolder {
         return this.todayDailySport.getTodaySports();
     }
 
-asdadadad
     public void addSport(Sport sport) {
         this.todayDailySport.addSport(sport);
     }

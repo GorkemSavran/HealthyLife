@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.jjoe64.graphview.GraphView;
 
 public class WaterPage extends AppCompatActivity implements View.OnClickListener {
@@ -42,8 +43,14 @@ public class WaterPage extends AppCompatActivity implements View.OnClickListener
         addWaterBtn = findViewById(R.id.add_water_btn);
         extractWaterBtn = findViewById(R.id.extract_water_btn);
         todayTotalMlText = findViewById(R.id.today_total_ml);
+        updateWaterText();
 
     }
+
+    public void  updateWaterText() {
+        todayTotalMlText.setText(TodayDailyFoodHolder.getInstance().getTodayWater() + " ml");
+    }
+
     public void waterAddExtr(View v){
         if (control == 0) {
             FragmentWater fragment_water = new FragmentWater();

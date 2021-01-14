@@ -10,8 +10,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.healthylife.FoodPage;
 import com.example.healthylife.R;
+import com.example.healthylife.SportPage;
 import com.example.healthylife.activities.AddSportPage;
+import com.example.healthylife.holders.TodayDailyFoodHolder;
+import com.example.healthylife.holders.TodayDailySportHolder;
 import com.example.healthylife.models.Sport;
 
 import java.util.ArrayList;
@@ -42,7 +46,6 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
         holder.imageButton.setImageResource((isAddingList ? R.mipmap.addpic_foreground : R.mipmap.extract_foreground));
         holder.sportName.setText(sport.getSportName());
         holder.burnedKcal.setText(sport.getBurnedCalorie() + " kcal - ");
-        System.out.println(sport.getQuantityMeasure());
 
         switch (sport.getQuantityMeasure()) {
 
@@ -76,7 +79,6 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
         TextView burnedKcal;
         TextView timeQuantity;
 
-
         public ViewHolder(View view) {
             super(view);
             sportFragment = view;
@@ -95,10 +97,17 @@ public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecycler
 
         @Override
         public void onClick(View v) {
-            Intent addSportPage = new Intent(sportFragment.getContext(), AddSportPage.class);
-            addSportPage.putExtra("sportName", this.sport.getSportName());
-            addSportPage.putExtra("sportImageUrl", this.sport.getSportImageUrl());
-            startActivity(sportFragment.getContext(), addSportPage,null);
+            if(isAddingList) {
+                Intent addSportPage = new Intent(sportFragment.getContext(), AddSportPage.class);
+                addSportPage.putExtra("sportName", this.sport.getSportName());
+                addSportPage.putExtra("sportImageUrl", this.sport.getSportImageUrl());
+                startActivity(sportFragment.getContext(), addSportPage,null);
+            }
+            else {
+                TodayDailySportHolder.getInstance().removeSport(sport);
+                SportPage activity = (SportPage)sportFragment.getContext();
+                activity.listSports();
+            }
         }
     }
 }

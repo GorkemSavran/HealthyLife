@@ -73,7 +73,7 @@ public class SportPage extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    private void listSports() {
+    public void listSports() {
         ArrayList<Sport> sports = TodayDailySportHolder.getInstance().getSports();
         SportFragment sportFragment = (SportFragment) fragmentManager.findFragmentByTag("Added Sport");
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -83,8 +83,8 @@ public class SportPage extends AppCompatActivity implements View.OnClickListener
         if(!sports.isEmpty()) {
             sportFragment = new SportFragment(sports, false);
             transaction.add(R.id.fragment_sport, sportFragment, "Added Sport");
-            totalBurnCalorie.setText(TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories() + " KCAL");
         }
+        totalBurnCalorie.setText(TodayDailySportHolder.getInstance().getTodayTotalBurnedCalories() + " KCAL");
         transaction.commit();
     }
 }

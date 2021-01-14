@@ -77,7 +77,7 @@
     <string name="_400_kcal_1_hour">400 kcal - 1 hour</string>
     <string name="search">Search</string>
     <string-array name="time_select">
-        <item>hour </item>
+        <item>hour</item>
         <item>minutes</item>
     </string-array>
 </resources>

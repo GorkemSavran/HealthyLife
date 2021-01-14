@@ -30,10 +30,16 @@ public class TodayDailyFoodHolder {
 
     public void decrementTodayWater(int water_ml) {
         this.todayDailyWater.setTodayWater(todayDailyWater.getTodayWater() - water_ml);
+        if(todayDailyWater.getTodayWater() < 0)
+            todayDailyWater.setTodayWater(0);
+    }
+
+    public int getTodayWater() {
+        return todayDailyWater.getTodayWater();
     }
 
     public void addFood(Food food) {
-        this.todayDailyFood.addFood(food);
+        todayDailyFood.addFood(food);
     }
 
     public void removeFood(Food food) {

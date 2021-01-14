@@ -2,6 +2,8 @@ package com.example.healthylife.fragments;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +12,10 @@ import android.view.ViewManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.healthylife.FoodPage;
 import com.example.healthylife.activities.AddFoodPage;
 import com.example.healthylife.R;
+import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.models.Food;
 
 import java.util.ArrayList;
@@ -53,10 +57,10 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
                 holder.quantity.setText(food.getQuantity() + "  water glass");
                 break;
         }
-        if(isAddingList){
-            ((ViewManager)holder.kcal.getParent()).removeView(holder.kcal);
-            ((ViewManager)holder.quantity.getParent()).removeView(holder.quantity);
-            holder.foodName.setPadding(0,10,0,0);
+        if(isAddingList) {
+            ((ViewManager) holder.kcal.getParent()).removeView(holder.kcal);
+            ((ViewManager) holder.quantity.getParent()).removeView(holder.quantity);
+            holder.foodName.setPadding(0, 10, 0, 0);
         }
     }
 
@@ -94,11 +98,17 @@ public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerVi
 
         @Override
         public void onClick(View v) {
-            Intent addFoodPage = new Intent(foodFragment.getContext(), AddFoodPage.class);
-            addFoodPage.putExtra("foodName", this.food.getFoodName());
-            //addFoodPage.putExtra("caloriePer100Gram", this.food.getCaloriePer100Gram());
-            addFoodPage.putExtra("foodImageUrl", this.food.getFoodImageUrl());
-            startActivity(foodFragment.getContext(), addFoodPage,null);
+            if(isAddingList) {
+                Intent addFoodPage = new Intent(foodFragment.getContext(), AddFoodPage.class);
+                addFoodPage.putExtra("foodName", this.food.getFoodName());
+                //addFoodPage.putExtra("caloriePer100Gram", this.food.getCaloriePer100Gram());
+                addFoodPage.putExtra("foodImageUrl", this.food.getFoodImageUrl());
+                startActivity(foodFragment.getContext(), addFoodPage,null);
+            }else {
+                TodayDailyFoodHolder.getInstance().removeFood(food);
+                FoodPage activity = (FoodPage)foodFragment.getContext();
+                activity.listFoods();
+            }
         }
     }
 }

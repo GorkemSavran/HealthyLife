@@ -71,13 +71,11 @@ public class FoodPage extends AppCompatActivity implements View.OnClickListener 
                 Intent intent2 = new Intent(context, FoodStatistics.class);
                 startActivity(intent2);
                 break;
-
-
         }
     }
 
 
-    private void listFoods() {
+    public void listFoods() {
         ArrayList<Food> foods = TodayDailyFoodHolder.getInstance().getFoods();
         FoodFragment foodFragment = (FoodFragment) fragmentManager.findFragmentByTag("Added Food");
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -87,8 +85,8 @@ public class FoodPage extends AppCompatActivity implements View.OnClickListener 
         if(!foods.isEmpty()) {
             foodFragment = new FoodFragment(foods, false);
             transaction.add(R.id.fragment_added_food, foodFragment, "Added Food");
-            foodTotalCalories.setText(TodayDailyFoodHolder.getInstance().getTodayTotalCalories() + " KCAL");
         }
+        foodTotalCalories.setText(TodayDailyFoodHolder.getInstance().getTodayTotalCalories() + " KCAL");
         transaction.commit();
     }
 
