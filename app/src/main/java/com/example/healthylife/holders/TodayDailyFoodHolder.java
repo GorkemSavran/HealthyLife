@@ -5,7 +5,7 @@ import com.example.healthylife.models.Food;
 import com.example.healthylife.models.DailyFood;
 
 import java.util.ArrayList;
-
+// GÖRKEM SAVRAN
 public class TodayDailyFoodHolder {
     private static TodayDailyFoodHolder instance = new TodayDailyFoodHolder();
 
@@ -13,9 +13,6 @@ public class TodayDailyFoodHolder {
     private DailyWater todayDailyWater;
 
     private TodayDailyFoodHolder() {
-        // EĞer bugün içerisinde girmişse databaseden onun bilgilerini alıp başlat
-
-        //Eğer girmemişse 0dan oluştur
         todayDailyFood = new DailyFood();
         todayDailyWater = new DailyWater();
     }

@@ -4,7 +4,7 @@ import com.example.healthylife.models.Food;
 import com.example.healthylife.models.QuantityMeasure;
 
 import java.util.ArrayList;
-
+// GÖRKEM SAVRAN
 public class FoodStore {
 
     public static ArrayList<Food> getDummyFoods(String searchString) {

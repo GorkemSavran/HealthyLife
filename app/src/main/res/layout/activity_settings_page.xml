@@ -41,7 +41,7 @@
         android:ems="10"
         android:background="@drawable/customborder"
         android:textColor="@android:color/background_dark"
-        android:text="@string/username" />
+        android:text="Deren" />
     <TextView
         android:id="@+id/settings_email"
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         android:background="@drawable/customborder"
         android:ems="10"
         android:textColor="@android:color/background_dark"
-        android:text="@string/email_address" />
+        android:text="derentoy@gmail.com" />
 
     <TextView
         android:id="@+id/settings_change_goals"

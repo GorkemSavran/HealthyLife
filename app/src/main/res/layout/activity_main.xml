@@ -15,11 +15,11 @@
         android:contentDescription="@string/todo" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/email_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/username"
+        android:hint="@string/email_address"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"

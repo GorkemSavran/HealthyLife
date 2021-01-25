@@ -7,7 +7,7 @@ import com.example.healthylife.models.GOAL;
 import com.example.healthylife.models.User;
 
 import java.util.Date;
-
+// GÖRKEM SAVRAN
 public class UserStore {
 
     public static User getDummyUser() {

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+// KIYMET DEREN TOY
 public class SportRecyclerViewAdapter extends RecyclerView.Adapter<SportRecyclerViewAdapter.ViewHolder> {
 
     private final ArrayList<Sport> sports;

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+// KIYMET DEREN TOY
 public class PersonalInfo2 extends AppCompatActivity implements View.OnClickListener  {
     Button backButton, continueBtn;
     EditText heightNum, currentWeightNum, targetWeightNum;

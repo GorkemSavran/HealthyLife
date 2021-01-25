@@ -21,6 +21,8 @@ import java.util.ArrayList;
 /**
  * A fragment representing a list of Items.
  */
+
+// GÖRKEM SAVRAN
 public class FoodFragment extends Fragment {
 
     Activity context;

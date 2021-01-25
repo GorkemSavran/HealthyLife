@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+// GÖRKEM SAVRAN
 public class FoodRecyclerViewAdapter extends RecyclerView.Adapter<FoodRecyclerViewAdapter.ViewHolder> {
 
     private final ArrayList<Food> foods;

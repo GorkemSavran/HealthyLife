@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "935232614377",
+    "project_id": "mobileappdevelopment-7de2e",
+    "storage_bucket": "mobileappdevelopment-7de2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935232614377:android:a1d6b44c6fc40e823c6578",
+        "android_client_info": {
+          "package_name": "com.example.healthylife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935232614377-c77g85fsrdrs5ma3er0ju9vp6sud444p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthylife",
+            "certificate_hash": "18d349c5b1eafe11bcb3ac9b43b95320767e1d27"
+          }
+        },
+        {
+          "client_id": "935232614377-lpckvqjj51h6lr2gu83j9qhvoto6bcon.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthylife",
+            "certificate_hash": "038da740fd2ada6b8abd259b53421d23d71780df"
+          }
+        },
+        {
+          "client_id": "935232614377-hhkg4ks4dsse41nuiv2t6ud8mj51vo90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAKw7haCdb6upsJgmtlxmP_95WmCz-rfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935232614377-hhkg4ks4dsse41nuiv2t6ud8mj51vo90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

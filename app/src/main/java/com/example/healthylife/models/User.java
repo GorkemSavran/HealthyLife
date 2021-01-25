@@ -2,6 +2,7 @@ package com.example.healthylife.models;
 
 import java.util.Date;
 
+// GÖRKEM SAVRAN
 public class User {
     private String username;
     private String email;

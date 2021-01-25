@@ -18,6 +18,7 @@ import com.example.healthylife.models.Food;
 
 import java.util.ArrayList;
 
+// GÖRKEM SAVRAN
 public class SearchFood extends AppCompatActivity implements View.OnClickListener  {
     Context context = this;
     Button backButton, searchButton;

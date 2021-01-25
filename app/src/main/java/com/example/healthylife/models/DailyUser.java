@@ -1,5 +1,6 @@
 package com.example.healthylife.models;
 
+// GÖRKEM SAVRAN
 public class DailyUser {
     private GOAL goal;
     private int height;

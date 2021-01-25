@@ -22,6 +22,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// KIYMET DEREN TOY
 public class WaterPage extends AppCompatActivity implements View.OnClickListener {
     Button backButton, addWaterBtn, extractWaterBtn;
     Context context = this;

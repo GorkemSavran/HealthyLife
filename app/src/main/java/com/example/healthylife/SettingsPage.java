@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.healthylife.holders.TodayDailyUserHolder;
 
+// KIYMET DEREN TOY
 public class SettingsPage extends AppCompatActivity implements View.OnClickListener {
     Button backButton, logOutBtn;
     TextView settingsUsername, settingsEmail, settingsChangeGoals;

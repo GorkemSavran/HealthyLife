@@ -22,6 +22,7 @@ import com.example.healthylife.models.Food;
 import com.example.healthylife.models.QuantityMeasure;
 import com.example.healthylife.tasks.DownloadImageTask;
 
+// GÖRKEM SAVRAN
 public class AddFoodPage extends AppCompatActivity  implements View.OnClickListener, AdapterView.OnItemSelectedListener, TextWatcher{
     Context context = this;
     Button backButton;

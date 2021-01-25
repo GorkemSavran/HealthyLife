@@ -3,16 +3,13 @@ import com.example.healthylife.models.DailySport;
 import com.example.healthylife.models.Sport;
 
 import java.util.ArrayList;
-
+// KIYMET DEREN TOY
 public class TodayDailySportHolder {
     private static TodayDailySportHolder instance = new TodayDailySportHolder();
 
     private DailySport todayDailySport;
 
     private TodayDailySportHolder() {
-        // Eğer bugün içerisinde girmişse databaseden onun bilgilerini alıp başlat
-
-        //Eğer girmemişse 0dan oluştur
         todayDailySport = new DailySport();
 
     }

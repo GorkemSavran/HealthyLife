@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
+// KIYMET DEREN TOY
 public class GoalPage extends AppCompatActivity implements View.OnClickListener {
     RadioButton radioButton1;
     RadioButton radioButton2;

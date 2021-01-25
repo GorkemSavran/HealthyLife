@@ -15,6 +15,7 @@ import com.example.healthylife.holders.TodayDailyFoodHolder;
 import com.example.healthylife.holders.TodayDailySportHolder;
 import com.example.healthylife.holders.TodayDailyUserHolder;
 
+// KIYMET DEREN TOY - GÖRKEM SAVRAN
 public class MainScreen extends AppCompatActivity implements View.OnClickListener {
     Button weightPageBtn, foodPageBtn, waterPageBtn, sportPageBtn, settingPageBtn;
     ImageView weightPic, foodPic, waterPic, sportPic, settingsPic;

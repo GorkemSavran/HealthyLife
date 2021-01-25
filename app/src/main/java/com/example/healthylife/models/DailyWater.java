@@ -1,5 +1,5 @@
 package com.example.healthylife.models;
-
+// GÖRKEM SAVRAN
 public class DailyWater {
     private int todayWater;
 

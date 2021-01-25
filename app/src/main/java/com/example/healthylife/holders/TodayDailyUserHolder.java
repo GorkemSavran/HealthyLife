@@ -9,6 +9,7 @@ import com.example.healthylife.models.User;
 
 import java.util.Date;
 
+// GÖRKEM SAVRAN
 public class TodayDailyUserHolder {
     private static TodayDailyUserHolder instance = new TodayDailyUserHolder();
 

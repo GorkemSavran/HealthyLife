@@ -19,6 +19,7 @@ import java.util.ArrayList;
 /**
  * A fragment representing a list of Items.
  */
+// KIYMET DEREN TOY
 public class SportFragment extends Fragment {
 
     Activity context;

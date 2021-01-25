@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
+// KIYMET DEREN TOY
 public class PersonalInfo extends AppCompatActivity implements View.OnClickListener {
     Button backButton, continueBtn;
     RadioButton radioBtnMan, radioBtnWoman;

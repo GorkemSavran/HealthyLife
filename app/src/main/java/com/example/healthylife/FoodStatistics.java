@@ -17,6 +17,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// GÖRKEM SAVRAN
 public class FoodStatistics extends AppCompatActivity implements View.OnClickListener {
     TextView today_total, todayTotalCal;
     GraphView graphFood;

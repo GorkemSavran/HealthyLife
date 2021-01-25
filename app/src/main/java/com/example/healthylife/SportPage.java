@@ -19,6 +19,7 @@ import com.example.healthylife.models.Sport;
 
 import java.util.ArrayList;
 
+// KIYMET DEREN TOY
 public class SportPage extends AppCompatActivity implements View.OnClickListener {
     Button backButton, addNewSportBtn, sportStatisticsBtn;
     TextView totalBurnCalorie, sportStatistics;

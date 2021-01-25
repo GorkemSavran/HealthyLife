@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+// KIYMET DEREN TOY
 public class RegardingPage extends AppCompatActivity implements  View.OnClickListener {
     RatingBar ratingBar;
     Button cancelBtn, submitBtn;

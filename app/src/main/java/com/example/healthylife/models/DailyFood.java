@@ -1,7 +1,7 @@
 package com.example.healthylife.models;
 
 import java.util.ArrayList;
-
+// GÖRKEM SAVRAN
 public class DailyFood {
 
     private int todayCalories;

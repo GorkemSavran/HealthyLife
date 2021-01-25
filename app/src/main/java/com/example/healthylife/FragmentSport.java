@@ -13,6 +13,8 @@ import android.view.ViewGroup;
  * Use the {@link FragmentSport#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+// KIYMET DEREN TOY
 public class FragmentSport extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match

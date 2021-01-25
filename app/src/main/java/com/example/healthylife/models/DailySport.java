@@ -1,7 +1,7 @@
 package com.example.healthylife.models;
 
 import java.util.ArrayList;
-
+// KIYMET DEREN TOY
 public class DailySport {
 
     private int todayBurnedCalories;

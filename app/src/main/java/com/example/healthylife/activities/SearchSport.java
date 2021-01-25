@@ -19,6 +19,7 @@ import com.example.healthylife.models.Sport;
 
 import java.util.ArrayList;
 
+// KIYMET DEREN TOY
 public class SearchSport extends AppCompatActivity implements View.OnClickListener  {
     Context context = this;
     Button backButton, searchSportButton;

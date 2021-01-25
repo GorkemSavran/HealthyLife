@@ -18,6 +18,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// KIYMET DEREN TOY
 public class SportStatistics extends AppCompatActivity implements View.OnClickListener  {
     Button backBtn;
     GraphView graphSport;

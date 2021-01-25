@@ -25,6 +25,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+// KIYMET DEREN TOY
 public class WeightPage extends AppCompatActivity implements View.OnClickListener, TextWatcher {
     GraphView graphWeight;
     EditText currentWeightUpdate;

@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.example.healthylife.holders.TodayDailyFoodHolder;
 
+// KIYMET DEREN TOY
 public class FragmentWater extends Fragment {
 
 

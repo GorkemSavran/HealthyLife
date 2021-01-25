@@ -1,5 +1,6 @@
 package com.example.healthylife.models;
 
+// KIYMET DEREN TOY
 public class Sport {
     private String sportName;
     private String sportImageUrl;

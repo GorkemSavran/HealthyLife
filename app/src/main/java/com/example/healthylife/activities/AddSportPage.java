@@ -20,6 +20,7 @@ import com.example.healthylife.models.QuantityMeasure;
 import com.example.healthylife.models.Sport;
 import com.example.healthylife.tasks.DownloadImageTask;
 
+// KIYMET DEREN TOY
 public class AddSportPage extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener, TextWatcher {
     Button backButton, addSportButton;
     EditText timeOfSport;

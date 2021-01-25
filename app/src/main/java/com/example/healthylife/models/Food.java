@@ -1,7 +1,7 @@
 package com.example.healthylife.models;
 
 
-
+// GÖRKEM SAVRAN
 public class Food {
     private String foodName;
     private String foodImageUrl;

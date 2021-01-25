@@ -20,6 +20,7 @@ import com.example.healthylife.models.Food;
 
 import java.util.ArrayList;
 
+// GÖRKEM SAVRAN
 public class FoodPage extends AppCompatActivity implements View.OnClickListener {
     Context context = this;
     Button  backButton, addNewFoodBtn, foodStatisticsBtn;
